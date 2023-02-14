@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "102181225961",
+    "project_id": "winterbreakproject-52fc6",
+    "storage_bucket": "winterbreakproject-52fc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102181225961:android:a0f6efcd16d2c8b5523778",
+        "android_client_info": {
+          "package_name": "com.example.winterbreakproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102181225961-5i2m7dqkfrode2leg1hq2e14or0g6o2e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.winterbreakproject",
+            "certificate_hash": "6b8fed415f340560db41b9e2164fa7d8793ede6c"
+          }
+        },
+        {
+          "client_id": "102181225961-korebeihl0knqam3hf7qi7qnsk2me04v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnpjl4u9dGqkVDAXKIemByKWW03Covncg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102181225961-korebeihl0knqam3hf7qi7qnsk2me04v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
