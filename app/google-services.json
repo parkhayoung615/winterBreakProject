@@ -15,7 +15,7 @@
       "oauth_client": [
         {
           "client_id": "102181225961-5i2m7dqkfrode2leg1hq2e14or0g6o2e.apps.googleusercontent.com",
-          "client_type": 1,
+          "client_type": 3,
           "android_info": {
             "package_name": "com.example.winterbreakproject",
             "certificate_hash": "6b8fed415f340560db41b9e2164fa7d8793ede6c"
