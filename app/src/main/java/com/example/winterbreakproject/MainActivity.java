@@ -38,14 +38,6 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
     LocationManager manager;
     GPSListener gpsListener;
 
-    SupportMapFragment mapFragment;
-    GoogleMap map;
-
-    Marker myMarker;
-    MarkerOptions myLocationMarker;
-    Circle circle;
-    CircleOptions circle1KM;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
