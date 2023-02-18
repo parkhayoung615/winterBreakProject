@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< Updated upstream
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapsInitializer;
@@ -37,6 +38,11 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
     private TextView textView1;
     LocationManager manager;
     GPSListener gpsListener;
+=======
+import wonpa.alwaysweb.com.myloctest.R;
+
+public class MainActivity extends AppCompatActivity {
+>>>>>>> Stashed changes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
