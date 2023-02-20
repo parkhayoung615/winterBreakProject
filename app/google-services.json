@@ -14,19 +14,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "102181225961-qol5nm1355jfam4lgjvgj0mgr0v2p8op.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.winterbreakproject",
-            "certificate_hash": "6b8fed415f340560db41b9e2164fa7d8793ede6c"
-          }
-        },
-        {
-          "client_id": "102181225961-vh39ot8hpiq140g9k4qviuf90m6e4l7r.apps.googleusercontent.com",
+          "client_id": "102181225961-hvhfg41317ic55lr2thkl635dir5neo1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.winterbreakproject",
             "certificate_hash": "25d2f3121cfb549031af6067187ca1a70d6c390d"
+          }
+        },
+        {
+          "client_id": "102181225961-n0kld7014l0vgcmnkg7lfggfe5kdahes.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.winterbreakproject",
+            "certificate_hash": "6b8fed415f340560db41b9e2164fa7d8793ede6c"
           }
         },
         {

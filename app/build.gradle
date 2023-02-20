@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.application'
-    // 구글 서비스 추가 (근데 이거 때문에 오류나서 주석 처리함
+    // 구글 서비스 추가 (근데 이거 때문에 오류나서 주석 처리함)
     // id 'com.google.gms.google-services'
 }
 
@@ -58,4 +58,6 @@ dependencies {
 
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
+
+    implementation 'com.google.firebase:firebase-auth-ktx'
 }
