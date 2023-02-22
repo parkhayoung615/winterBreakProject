@@ -15,8 +15,9 @@
         android:theme="@style/Theme.WinterBreakProject"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
+            <!-- 아래 코드가 삽입되는 부분이 먼저 실행되는 부분을 의미 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

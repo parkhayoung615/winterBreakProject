@@ -1,4 +1,4 @@
-package com.example.winterbreakproject;
+package com.example.winterbreakproject.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.winterbreakproject.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -19,9 +20,7 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.ktx.Firebase;
-
-public class MainActivity extends AppCompatActivity {
+public class GoogleLoginActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final int RC_SIGN_IN = 9001;
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInAccount gsa;
     // 파이어베이스 인증 객체 생성
     private FirebaseAuth mAuth;
+
     // 구글 로그인 버튼
     private SignInButton btnGoogleLogin;
     private Button btnLogoutGoogle;
@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
         btnGoogleLogin = findViewById(R.id.btn_google_sign_in);
         btnGoogleLogin.setOnClickListener(view -> {
             // 기존에 로그인 했던 계정을 확인
-            gsa = GoogleSignIn.getLastSignedInAccount(MainActivity.this);
+            gsa = GoogleSignIn.getLastSignedInAccount(GoogleLoginActivity.this);
 
             // 로그인이 되어있는 경우
             if (gsa != null)
-                Toast.makeText(MainActivity.this, R.string.status_login, Toast.LENGTH_SHORT).show();
+                Toast.makeText(GoogleLoginActivity.this, R.string.status_login, Toast.LENGTH_SHORT).show();
             else
                 signIn();
         });
@@ -91,13 +91,13 @@ public class MainActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithCredential:success");
-                        Toast.makeText(MainActivity.this, R.string.success_login, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(GoogleLoginActivity.this, R.string.success_login, Toast.LENGTH_SHORT).show();
                         FirebaseUser user = mAuth.getCurrentUser();
                         // updateUI(user);
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
-                        Toast.makeText(MainActivity.this, R.string.failed_login, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(GoogleLoginActivity.this, R.string.failed_login, Toast.LENGTH_SHORT).show();
                         // updateUI(null);
                     }
                 });
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, task -> {
                     mAuth.signOut();
-                    Toast.makeText(MainActivity.this, R.string.success_logout, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GoogleLoginActivity.this, R.string.success_logout, Toast.LENGTH_SHORT).show();
                     // ...
                 });
         gsa = null;
