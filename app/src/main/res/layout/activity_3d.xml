@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/closet_3"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <ImageButton
+        android:id="@+id/closet_2"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <ImageButton
+        android:id="@+id/closet_1"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <ImageButton
+        android:id="@+id/closet_5"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="492dp" />
+
+    <ImageButton
+        android:id="@+id/closet_6"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="492dp" />
+
+    <ImageButton
+        android:id="@+id/closet_4"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="492dp" />
+
+    <ImageButton
+        android:id="@+id/closet_9"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="609dp" />
+
+    <ImageButton
+        android:id="@+id/closet_7"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="609dp" />
+
+    <ImageButton
+        android:id="@+id/closet_8"
+        android:layout_width="113dp"
+        android:layout_height="94dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="609dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:background="#CCCCCC"
+        android:text="오늘의 외출복을 당신의 아바타에게 입혀보세요!"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
