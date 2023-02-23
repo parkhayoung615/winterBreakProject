@@ -13,6 +13,10 @@
         android:theme="@style/Theme.WinterBreakProject"
         tools:targetApi="31" />
 
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDb_i5-wR15eM0rJcla_QdQrc4o-uMTYlE" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
