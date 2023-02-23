@@ -52,7 +52,8 @@ public class GoogleLoginActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
-        btnGoogleLogin = findViewById(R.id.btn_google_sign_in);
+        // 로그인 버튼 연결
+        // btnGoogleLogin = findViewById(R.id.btn_google_sign_in);
         btnGoogleLogin.setOnClickListener(view -> {
             // 기존에 로그인 했던 계정을 확인
             gsa = GoogleSignIn.getLastSignedInAccount(GoogleLoginActivity.this);
@@ -64,7 +65,8 @@ public class GoogleLoginActivity extends AppCompatActivity {
                 signIn();
         });
 
-        btnLogoutGoogle = findViewById(R.id.btn_logout_google);
+        // 로그아웃 버튼 연결
+        // btnLogoutGoogle = findViewById(R.id.btn_logout_google);
         btnLogoutGoogle.setOnClickListener(view -> {
             // 로그아웃
             signOut();

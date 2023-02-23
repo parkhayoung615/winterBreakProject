@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 public class DefaultRegisterActivity extends AppCompatActivity {
 
-    private EditText et_id, et_pass, et_name, et_age;
+    private EditText user_id, user_pwd, user_name, user_email;
     private Button btn_register;
 
     // 액티비티 시작 시 처음으로 실행되는 생명주기
@@ -28,15 +28,13 @@ public class DefaultRegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // activity_main에 회원가입 화면 넣기
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
 
         // 아이디 값 찾기
-        /*
-        et_id = findViewById(R.id.et_id);
-        et_pass = findViewById(R.id.et_pass);
-        et_name = findViewById(R.id.et_name);
-        et_age = findViewById(R.id.et_age);
-        */
+        user_id = findViewById(R.id.user_id);
+        user_pwd = findViewById(R.id.user_pwd);
+        user_name = findViewById(R.id.user_name);
+        user_email = findViewById(R.id.user_email);
 
         // 회원가입 버튼 클릭 시 수행
         // btn_register = findViewById(R.id.btn_register);
@@ -44,10 +42,10 @@ public class DefaultRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // EditText에 현재 입력 되어있는 값을 가져온다.
-                String userID = et_id.getText().toString();
-                String userPass = et_pass.getText().toString();
-                String userName = et_name.getText().toString();
-                int userAge = Integer.parseInt(et_age.getText().toString());
+                String userID = user_id.getText().toString();
+                String userPass = user_pwd.getText().toString();
+                String userName = user_name.getText().toString();
+                String userEmail = user_email.getText().toString();
 
                 Response.Listener<String> respoListener = new Response.Listener<String>() {
                     @Override
@@ -73,7 +71,7 @@ public class DefaultRegisterActivity extends AppCompatActivity {
                 };
 
                 // 서버로 Volley를 이용해서 요청한다.
-                DefaultRegisterRequest defaultRegisterRequest = new DefaultRegisterRequest(userID, userPass, userName, userAge, respoListener);
+                DefaultRegisterRequest defaultRegisterRequest = new DefaultRegisterRequest(userID, userPass, userName, userEmail, respoListener);
                 RequestQueue queue = Volley.newRequestQueue(DefaultRegisterActivity.this);
                 queue.add(defaultRegisterRequest);
             }

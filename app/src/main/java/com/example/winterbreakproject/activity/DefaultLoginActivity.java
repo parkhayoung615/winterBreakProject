@@ -20,22 +20,21 @@ import org.json.JSONObject;
 
 public class DefaultLoginActivity extends AppCompatActivity {
 
-    private EditText et_id, et_pass;
-    private Button btn_login, btn_register;
-
+    private EditText user_id, user_pwd;
+    private Button login_btn, register_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // activity_main에 로그인 화면 넣기
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         // 아이디 값 찾기
-        // et_id = findViewById(R.id.et_id);
-        // et_pass = findViewById(R.id.et_pass);
+        user_id = findViewById(R.id.user_id);
+        user_pwd = findViewById(R.id.user_pwd);
 
         // 회원가입 버튼 클릭 시 회원가입 화면으로 전환환다.
-        // btn_register = findViewById(R.id.btn_register);
-        btn_register.setOnClickListener(new View.OnClickListener() {
+        register_btn = findViewById(R.id.register_btn);
+        register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DefaultLoginActivity.this, DefaultRegisterActivity.class);
@@ -43,13 +42,12 @@ public class DefaultLoginActivity extends AppCompatActivity {
             }
         });
 
-        // btn_login = findViewById(R.id.btn_login);
-        btn_login.setOnClickListener(new View.OnClickListener() {
+        login_btn = findViewById(R.id.login_btn);
+        login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userID = et_id.getText().toString();
-                String userPass = et_pass.getText().toString();
-
+                String userID = user_id.getText().toString();
+                String userPass = user_pwd.getText().toString();
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
