@@ -1,26 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="655dp"
-        android:layout_gravity="center"
-        android:gravity="bottom|center"
-        android:text="WBSP"
 
-        >
-
-    <TextView
-        android:layout_width="142dp"
+    <!-- Login -->
+    <RelativeLayout
+        android:id="@+id/login"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="뭐 입을지 고민될 때,"
-        tools:ignore="HardcodedText" />
+        android:background="#F5F5F5"
+        android:clipToOutline="true">
 
-</LinearLayout>
+        <!-- 뭐 입을지 고민될 때, -->
+        <TextView
+            android:id="@+id/When_wear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="141dp"
+            android:layout_marginTop="205dp"
+            android:gravity="top"
+            android:lineHeight="23sp"
+            android:text="뭐 입을지 고민될 때,"
+            android:textAppearance="When_wear"
+            android:textSize="16sp" />
+
+        <!-- WBSP -->
+        <TextView
+            android:id="@+id/WBSP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="154dp"
+            android:layout_marginTop="229dp"
+            android:gravity="top"
+            android:lineHeight="58sp"
+            android:text="WBSP"
+            android:textAppearance="WBSP"
+            android:textSize="40sp" />
+
+        <!-- 빠른 로그인 -->
+        <TextView
+            android:id="@+id/Ql"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="72dp"
+            android:layout_marginTop="420dp"
+            android:gravity="top"
+            android:text="빠른 로그인"
+            android:textAppearance="빠른 로그인"
+            android:textSize="12sp" />
+
+        <!-- Continue with Google / Left Aligned / Fixed -->
+
+        <TextView
+            android:id="@+id/Join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="246dp"
+            android:layout_marginTop="490dp"
+            android:gravity="top"
+            android:text="일반 회원가입"
+            android:textAppearance="Join"
+            android:textColor="#807D7D"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:id="@+id/continue_wi"
+            android:layout_width="278dp"
+            android:layout_height="49dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="442dp"
+            android:background="continue_wi"
+            android:elevation="3dp">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/goolge" />
+
+
+
+
+
+        </RelativeLayout>
+
+
+

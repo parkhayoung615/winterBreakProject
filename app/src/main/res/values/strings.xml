@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">WinterBreakProject</string>
 </resources>
+
+    <!-- strings.xml -->
+<string name="When_wear">
+
+\u00EB\u00AD\u0090 \u00EC\u009E\u0085\u00EC\u009D\u0084\u00EC\u00A7\u0080 \u00EA\u00B3\u00A0\u00EB\u00AF\u00BC\u00EB\u0090\u00A0 \u00EB\u0095\u008C,
+</string>
+
+
+    <!-- strings.xml -->
+<string name="WBSP">
+
+WBSP
+</string>
+
+    <!-- strings.xml -->
+<string name="Ql">
+
+\u00EB\u00B9\u00A0\u00EB\u00A5\u00B8 \u00EB\u00A1\u009C\u00EA\u00B7\u00B8\u00EC\u009D\u00B8
+</string>
+
+
+    <!-- strings.xml -->
+<string name="Welcome">
+
+\u00ED\u0099\u0098\u00EC\u0098\u0081\u00ED\u0095\u00B4\u00EC\u009A\u0094!
+</string>
+
