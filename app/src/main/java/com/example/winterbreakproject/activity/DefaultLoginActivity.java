@@ -26,7 +26,7 @@ public class DefaultLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // activity_main에 로그인 화면 넣기
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_defaultlogin);
 
         // 아이디 값 찾기
         user_id = findViewById(R.id.user_id);

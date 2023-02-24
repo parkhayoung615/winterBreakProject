@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,12 +18,24 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".activity.DefaultLoginActivity"
+            android:exported="true">
             <!-- 아래 코드가 삽입되는 부분이 먼저 실행되는 부분을 의미 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!--
+        <activity
+            android:name=".activity.DefaultLoginActivity"
+            android:exported="true" />
+        -->
+        <activity
+            android:name=".activity.DefaultRegisterActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

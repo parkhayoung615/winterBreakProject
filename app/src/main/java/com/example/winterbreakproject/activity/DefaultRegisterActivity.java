@@ -19,16 +19,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class DefaultRegisterActivity extends AppCompatActivity {
-
     private EditText user_id, user_pwd, user_name, user_email;
-    private Button btn_register;
+    private Button register_btn;
 
     // 액티비티 시작 시 처음으로 실행되는 생명주기
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // activity_main에 회원가입 화면 넣기
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_defaultregister);
 
         // 아이디 값 찾기
         user_id = findViewById(R.id.user_id);
@@ -37,8 +36,8 @@ public class DefaultRegisterActivity extends AppCompatActivity {
         user_email = findViewById(R.id.user_email);
 
         // 회원가입 버튼 클릭 시 수행
-        // btn_register = findViewById(R.id.btn_register);
-        btn_register.setOnClickListener(new View.OnClickListener() {
+        register_btn = findViewById(R.id.register_btn);
+        register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // EditText에 현재 입력 되어있는 값을 가져온다.
