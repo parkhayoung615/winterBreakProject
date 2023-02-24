@@ -1,17 +1,30 @@
 package com.example.winterbreakproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.ContentValues;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tv_outPut;
+    private GpsTracker gpsTracker;
+
+    private static final int GPS_ENABLE_REQUEST_CODE = 2001;
+    private static final int PERMISSIONS_REQUEST_CODE = 100;
+    String[] REQUIRED_PERMISSIONS = {Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION};
 
 
     @Override
@@ -19,65 +32,103 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 위젯에 대한 참조
-        tv_outPut = (TextView) findViewById(R.id.tv_outPut);
+        if (!checkLocationServicesStatus()) {
+            showDialogForLocationServiceSetting();
+        } else {
+            checkRunTimePermission();
+        }
 
-        // URL 설정
-        String service_key = "nQAxEQckNcvmZ8ixYcO9rlFBnv5VN1bv5hkI5vufYQNHEf80yngnldtLbyQryYCrRVm%2FX8Tc0Xa0AkVaulqrNQ%3D%3D";
-        String num_of_rows = "10";
-        String page_no = "1";
-        String date_type = "JSON";
-        String base_date = "20210410";
-        String base_time = "0600";
+        final TextView textView_address = (TextView) findViewById(R.id.textview);
 
-        // 서울 좌표
-        String nx = "55";
-        String ny = "127";
+        Button ShowLocationButton = (Button) findViewById(R.id.button);
+        ShowLocationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                gpsTracker = new GpsTracker(MainActivity.this);
 
-        String url = "\uFEFFhttp://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?" +
-                "serviceKey=" + service_key +
-                "&numOfRows=" + num_of_rows +
-                "&pageNo=" + page_no +
-                "&dataType=" + date_type +
-                "&base_date=" + base_date +
-                "&base_time=" + base_time +
-                "&nx=" + nx +
-                "&ny=" + ny;
+                double latitude = gpsTracker.getLatitude();
+                double longitude = gpsTracker.getLongitude();
 
-        // AsyncTask를 통해 HttpURLConnection 수행
-        NetworkTask networkTask = new NetworkTask(url, null);
-        networkTask.execute();
+                String address = getCurrentAddress(latitude, longitude);
+                textView_address.setText(address);
+
+                Toast.makeText(MainActivity.this, "현재위치 \n위도" + latitude + "\n경도"
+                        + longitude, Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
+    @Override
+    public void onRequestPermissionResult(int permsRequestCode,
+                                          @NonNull String[] permissions,
+                                          @NonNull int[] grandResults) {
+        if (permsRequestCode == PERMISSIONS_REQUEST_CODE && grandResults.length ==
+                REQUIRED_PERMISSIONS.length) {
+            boolean check_result = true;
 
-    public class NetworkTask extends AsyncTask<Void, Void, String> {
+            for (int result : grandResults) {
+                if (result != PackageManager.PERMISSION_GRANTED) {
+                    check_result = false;
+                    break;
+                }
+            }
 
-        private String url;
-        private ContentValues values;
-
-        public NetworkTask(String url, ContentValues values) {
-            this.url = url;
-            this.values = values;
+            if (check_result) {
+                // 위치값
+            } else {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, REQUIRED_PERMISSIONS[0])
+                        || ActivityCompat.shouldShowRequestPermissionRationale(this, REQUIRED_PERMISSIONS[1])) {
+                    Toast.makeText(MainActivity.this, "퍼미션이 거부되었습니다. 앱을 다시 실행하여 퍼미션을 허용해주세요.", Toast.LENGTH_LONG).show();
+                    finish();
+                } else {
+                    Toast.makeText(MainActivity.this, "퍼미션이 거부되었습니다. 설정(앱 정보)에서 퍼미션을 허용해야 합니다.", Toast.LENGTH_LONG).show();
+                }
+            }
         }
 
-        @Override
-        protected String doInBackground(Void... params) {
-            String result; // 요청 결과를 저장할 변수.
-            RequestHttpConnection requestHttpConnection = new RequestHttpConnection();
-            result = requestHttpConnection.request(url, values); // 해당 URL로 부터 결과
-
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            //doInBackgroud()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로..
-            tv_outPut.setText(s);
-            Log.d("onPostEx", "출력 값 : " + s);
-        }
     }
 
+    void checkRunTimePermission() {
+
+        //런타임 퍼미션 처리
+        // 1. 위치 퍼미션을 가지고 있는지 체크합니다.
+        int hasFineLocationPermission = ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.ACCESS_FINE_LOCATION);
+        int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.ACCESS_COARSE_LOCATION);
+
+
+        if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED &&
+                hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
+
+            // 2. 이미 퍼미션을 가지고 있다면
+            // ( 안드로이드 6.0 이하 버전은 런타임 퍼미션이 필요없기 때문에 이미 허용된 걸로 인식합니다.)
+
+
+            // 3.  위치 값을 가져올 수 있음
+
+
+        } else {  //2. 퍼미션 요청을 허용한 적이 없다면 퍼미션 요청이 필요합니다. 2가지 경우(3-1, 4-1)가 있습니다.
+
+            // 3-1. 사용자가 퍼미션 거부를 한 적이 있는 경우에는
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, REQUIRED_PERMISSIONS[0])) {
+
+                // 3-2. 요청을 진행하기 전에 사용자가에게 퍼미션이 필요한 이유를 설명해줄 필요가 있습니다.
+                Toast.makeText(MainActivity.this, "이 앱을 실행하려면 위치 접근 권한이 필요합니다.", Toast.LENGTH_LONG).show();
+                // 3-3. 사용자게에 퍼미션 요청을 합니다. 요청 결과는 onRequestPermissionResult에서 수신됩니다.
+                ActivityCompat.requestPermissions(MainActivity.this, REQUIRED_PERMISSIONS,
+                        PERMISSIONS_REQUEST_CODE);
+
+
+            } else {
+                // 4-1. 사용자가 퍼미션 거부를 한 적이 없는 경우에는 퍼미션 요청을 바로 합니다.
+                // 요청 결과는 onRequestPermissionResult에서 수신됩니다.
+                ActivityCompat.requestPermissions(MainActivity.this, REQUIRED_PERMISSIONS,
+                        PERMISSIONS_REQUEST_CODE);
+            }
+
+        }
+
+    }
 }
-
