@@ -7,7 +7,6 @@
     android:orientation="vertical">
 
 
-    <!-- Login -->
     <RelativeLayout
         android:id="@+id/login"
         android:layout_width="match_parent"
@@ -15,35 +14,35 @@
         android:background="#F5F5F5"
         android:clipToOutline="true">
 
-        <!-- 뭐 입을지 고민될 때, -->
         <TextView
             android:id="@+id/When_wear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="141dp"
+            android:layout_marginLeft="139dp"
             android:layout_marginTop="205dp"
             android:gravity="top"
-            android:lineHeight="23sp"
             android:text="뭐 입을지 고민될 때,"
             android:textAppearance="When_wear"
             android:textSize="16sp" />
 
-        <!-- WBSP -->
+
         <TextView
             android:id="@+id/WBSP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="154dp"
-            android:layout_marginTop="229dp"
+            android:layout_marginLeft="151dp"
+            android:layout_marginTop="228dp"
             android:gravity="top"
             android:lineHeight="58sp"
             android:text="WBSP"
             android:textAppearance="WBSP"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:lineHeight="100sp" />
 
         <!-- 빠른 로그인 -->
         <TextView
@@ -52,12 +51,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="72dp"
-            android:layout_marginTop="420dp"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="489dp"
             android:gravity="top"
             android:text="빠른 로그인"
-            android:textAppearance="빠른 로그인"
-            android:textSize="12sp" />
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <!-- Continue with Google / Left Aligned / Fixed -->
 
@@ -67,36 +67,37 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="246dp"
-            android:layout_marginTop="490dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="569dp"
             android:gravity="top"
             android:text="일반 회원가입"
-            android:textAppearance="Join"
             android:textColor="#807D7D"
             android:textSize="12sp" />
 
         <RelativeLayout
             android:id="@+id/continue_wi"
-            android:layout_width="278dp"
-            android:layout_height="49dp"
+            android:layout_width="306dp"
+            android:layout_height="54dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="55dp"
-            android:layout_marginTop="442dp"
+            android:layout_marginTop="511dp"
             android:background="continue_wi"
             android:elevation="3dp">
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="305dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
                 app:srcCompat="@drawable/goolge" />
-
-
-
-
-
         </RelativeLayout>
 
 
+    </RelativeLayout>
 
+
+</LinearLayout>

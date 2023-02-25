@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- drawable/login.xml -->
+    <vetor
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt"
+        android:width="447dp"
+        android:height="902dp"
+        android:viewportWidth="447"
+        android:viewportHeight="902"
+        >
+
+        <group>
+
+            <clip-path
+                android:pathData="M55 18H392C412.435 18 429 34.5655 429 55V847C429 867.435 412.435 884 392 884H55C34.5655 884 18 867.435 18 847V55C18 34.5655 34.5655 18 55 18Z"
+                />
+
+            <path
+                android:pathData="M18 18V884H429V18"
+                android:fillColor="#FFFFFF"
+                />
+
+        </group>
+
+        <group>
+
+            <clip-path
+                android:pathData="M0 0V902H447V0M55 18H392C412.435 18 429 34.5655 429 55V847C429 867.435 412.435 884 392 884H55C34.5655 884 18 867.435 18 847V55C18 34.5655 34.5655 18 55 18Z"
+                />
+
+            <path
+                android:pathData="M55 18H392C412.435 18 429 34.5655 429 55V847C429 867.435 412.435 884 392 884H55C34.5655 884 18 867.435 18 847V55C18 34.5655 34.5655 18 55 18Z"
+                android:strokeWidth="36"
+                android:strokeColor="#000000"
+                />
+
+        </group>
+
+    </vetor>
+
 
 </selector>
-
-    <!-- drawable/login.xml -->
-<vector
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:aapt="http://schemas.android.com/aapt"
-android:width="447dp"
-android:height="902dp"
-android:viewportWidth="447"
-android:viewportHeight="902"
-    >
-
-<group>
-
-    <clip-path
-        android:pathData="M55 18H392C412.435 18 429 34.5655 429 55V847C429 867.435 412.435 884 392 884H55C34.5655 884 18 867.435 18 847V55C18 34.5655 34.5655 18 55 18Z"
-        />
-
-    <path
-        android:pathData="M18 18V884H429V18"
-        android:fillColor="#FFFFFF"
-        />
-
-</group>
-
-<group>
-
-    <clip-path
-        android:pathData="M0 0V902H447V0M55 18H392C412.435 18 429 34.5655 429 55V847C429 867.435 412.435 884 392 884H55C34.5655 884 18 867.435 18 847V55C18 34.5655 34.5655 18 55 18Z"
-        />
-
-    <path
-        android:pathData="M55 18H392C412.435 18 429 34.5655 429 55V847C429 867.435 412.435 884 392 884H55C34.5655 884 18 867.435 18 847V55C18 34.5655 34.5655 18 55 18Z"
-        android:strokeWidth="36"
-        android:strokeColor="#000000"
-        />
-
-</group>
-
-</vector>
-
 
 
