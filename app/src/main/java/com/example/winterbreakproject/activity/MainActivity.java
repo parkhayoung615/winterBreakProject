@@ -1,15 +1,16 @@
-package com.example.winterbreakproject;
+package com.example.winterbreakproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import java.util.Random;
+import com.example.winterbreakproject.R;
 
-public class TodayTipActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_today_tip);
+        setContentView(R.layout.activity_main);
     }
 }
