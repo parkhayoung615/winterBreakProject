@@ -80,6 +80,25 @@
         </item>
 
     </style>
+
+    <!--
+Font family: Noto Sans KR
+Line height: 58sp
+(identical to box height)
+-->
+    <!-- styles.xml -->
+    <style name="wbsp">
+
+        <item name="android:textSize">
+            40sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
 </resources>
 
 

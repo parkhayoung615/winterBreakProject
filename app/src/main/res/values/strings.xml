@@ -26,4 +26,11 @@
 
 \u00ED\u0099\u0098\u00EC\u0098\u0081\u00ED\u0095\u00B4\u00EC\u009A\u0094!
 </string>
+
+    <!-- strings.xml -->
+    <string name="wbsp">
+
+WBSP
+</string>
+
 </resources>
