@@ -25,31 +25,6 @@ public class TodayTipActivity extends AppCompatActivity {
         // activity_main에 오늘의 팁 화면 넣기
         setContentView(R.layout.activity_main);
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    boolean sucess = jsonObject.getBoolean("success");
-                    // sql 실행에 성공한 경우
-                    if (sucess) {
-                        int id = jsonObject.getInt("id");
-                        String title = jsonObject.getString("title");
-                        String contents = jsonObject.getString("contents");
-                        Toast.makeText(getApplicationContext(), "test: 성공.", Toast.LENGTH_SHORT).show();
-                        // sql 실행에 실패한 경우
-                    } else {
-                        Toast.makeText(getApplicationContext(), "test: 실패.", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                } catch (JSONException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        };
-
-        TodayTipRequest todayTipRequest = new TodayTipRequest(id, title, contents, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(TodayTipActivity.this);
-        queue.add(todayTipRequest);
+        String url = "http://monayoung0323.dothome.co.kr/TodayTip.php";
     }
 }
