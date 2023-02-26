@@ -1,7 +1,5 @@
 package com.example.winterbreakproject.vo;
-
 public class TodayTipVO {
-
     int id;
     String title;
     String contents;

@@ -13,9 +13,7 @@ import com.example.winterbreakproject.R;
 import com.example.winterbreakproject.vo.TodayTipVO;
 
 import java.util.ArrayList;
-
 public class TodayTipDAO extends RecyclerView.Adapter {
-
     Context context;
     ArrayList<TodayTipVO> voArrayList;
 
@@ -28,15 +26,15 @@ public class TodayTipDAO extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater= LayoutInflater.from(context);
-        View itemView=inflater.inflate(R.layout.activity_recycler,parent,false);
+        View itemView=inflater.inflate(R.layout.activity_recycler, parent,false);
 
-        VH holder=new VH(itemView);
+        VH holder = new VH(itemView);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        VH vh= (VH) holder;
+        VH vh = (VH) holder;
 
         TodayTipVO vo = voArrayList.get(position);
         vh.tt_id.setText(Integer.toString(vo.getId()));
@@ -50,7 +48,6 @@ public class TodayTipDAO extends RecyclerView.Adapter {
     }
 
     class VH extends RecyclerView.ViewHolder{
-
         TextView tt_id;
         TextView tt_title;
         TextView tt_contents;
