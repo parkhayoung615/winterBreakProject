@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.winterbreakproject.R;
 import com.example.winterbreakproject.vo.TodayTipVO;
 
@@ -21,7 +23,6 @@ public class TodayTipDAO extends RecyclerView.Adapter {
         this.context = context;
         this.voArrayList = voArrayList;
     }
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,6 +41,7 @@ public class TodayTipDAO extends RecyclerView.Adapter {
         vh.tt_id.setText(Integer.toString(vo.getId()));
         vh.tt_title.setText(vo.getTitle());
         vh.tt_contents.setText(vo.getContents());
+        Glide.with(context).load(vo.getImage()).into(vh.tt_image);
     }
 
     @Override
@@ -52,13 +54,14 @@ public class TodayTipDAO extends RecyclerView.Adapter {
         TextView tt_title;
         TextView tt_contents;
 
+        ImageView tt_image;
         public VH(@NonNull View itemView) {
             super(itemView);
 
             tt_id=itemView.findViewById(R.id.tt_id);
             tt_title=itemView.findViewById(R.id.tt_title);
             tt_contents=itemView.findViewById(R.id.tt_contents);
-
+            tt_image=itemView.findViewById(R.id.tt_image);
         }
     }
 }

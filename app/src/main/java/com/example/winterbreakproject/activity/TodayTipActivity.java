@@ -67,12 +67,13 @@ public class TodayTipActivity extends AppCompatActivity {
                         int id = Integer.parseInt(jsonObject.getString("id")); // id가 int형이기에 문자열로 바꿔야 함
                         String title = jsonObject.getString("title");
                         String contents = jsonObject.getString("contents");
-
-                        voArrayList.add(0, new TodayTipVO(id, title, contents)); // 첫번째 매개변수는 몇 번째에 추가될 지, 제일 위에 오도록
+                        String image = "http://monayoung0323.dothome.co.kr/" + jsonObject.getString("image");
+                        voArrayList.add(0, new TodayTipVO(id, title, contents, image)); // 첫번째 매개변수는 몇 번째에 추가될 지, 제일 위에 오도록
                         dao.notifyItemInserted(0);
                     }
-                } catch (JSONException e) {e.printStackTrace();}
-
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }, new Response.ErrorListener() {
             @Override

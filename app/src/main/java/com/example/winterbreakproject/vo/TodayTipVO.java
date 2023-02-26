@@ -3,16 +3,16 @@ public class TodayTipVO {
     int id;
     String title;
     String contents;
-
+    String image;
     public TodayTipVO() {
     }
 
-    public TodayTipVO(int id, String title, String contents) {
+    public TodayTipVO(int id, String title, String contents, String image) {
         this.id = id;
         this.title = title;
         this.contents = contents;
+        this.image = image;
     }
-
     public int getId() {
         return id;
     }
@@ -34,5 +34,13 @@ public class TodayTipVO {
 
     public void setContents(String contents) {
         this.contents = contents;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
