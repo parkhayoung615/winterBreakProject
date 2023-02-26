@@ -1,30 +1,31 @@
 package com.example.winterbreakproject;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.content.ContentValues;
+import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+    private Button button1;
+    private TextView txtResult;
 
-    private GpsTracker gpsTracker;
-
-    private static final int GPS_ENABLE_REQUEST_CODE = 2001;
-    private static final int PERMISSIONS_REQUEST_CODE = 100;
-    String[] REQUIRED_PERMISSIONS = {Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION};
 
 
     @Override
@@ -32,103 +33,98 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (!checkLocationServicesStatus()) {
-            showDialogForLocationServiceSetting();
-        } else {
-            checkRunTimePermission();
-        }
+        button1 = (Button)findViewById(R.id.button1);
+        txtResult = (TextView)findViewById(R.id.txtResult);
 
-        final TextView textView_address = (TextView) findViewById(R.id.textview);
 
-        Button ShowLocationButton = (Button) findViewById(R.id.button);
-        ShowLocationButton.setOnClickListener(new View.OnClickListener() {
+
+        // 위치 관리자 객체 참조하기
+        final LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                gpsTracker = new GpsTracker(MainActivity.this);
+            public void onClick(View v) {
+                if ( Build.VERSION.SDK_INT >= 23 &&
+                        ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
+                    ActivityCompat.requestPermissions( MainActivity.this, new String[] {
+                            android.Manifest.permission.ACCESS_FINE_LOCATION}, 0 );
+                }
+                else{
+                    // 가장최근 위치정보 가져오기
+                    Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if(location != null) {
+                        String provider = location.getProvider();
+                        double longitude = location.getLongitude();
+                        double latitude = location.getLatitude();
 
-                double latitude = gpsTracker.getLatitude();
-                double longitude = gpsTracker.getLongitude();
 
-                String address = getCurrentAddress(latitude, longitude);
-                textView_address.setText(address);
 
-                Toast.makeText(MainActivity.this, "현재위치 \n위도" + latitude + "\n경도"
-                        + longitude, Toast.LENGTH_LONG).show();
+
+//                        String nowAddr ="현재 위치를 확인 할 수 없습니다.";
+//                        Geocoder geocoder = new Geocoder(provider, Locale.KOREA);
+//                        List<Address> address;
+//
+//                        try
+//                        {
+//                            if (geocoder != null)
+//                            {
+//                                address = geocoder.getFromLocation(latitude, longitude, 1);
+//                                if (address != null && address.size() > 0)
+//                                {
+//                                    nowAddr = address.get(0).getAddressLine(0).toString();
+//                                }
+//                            }
+//                        }
+//                        catch (IOException e)
+//                        {
+//                            Toast.makeText(provider, "주소를 가져 올 수 없습니다.", Toast.LENGTH_LONG).show();
+//                            e.printStackTrace();
+//                        }
+
+
+
+
+
+
+
+                        txtResult.setText("위치정보 : " + provider + "\n" +
+                                "위도 : " + longitude + "\n" +
+                                "경도 : " + latitude);
+                    }
+
+                    // 위치정보를 원하는 시간, 거리마다 갱신해준다.
+                    lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+                            1000,
+                            1,
+                            gpsLocationListener);
+                    lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
+                            1000,
+                            1,
+                            gpsLocationListener);
+                }
             }
         });
-
     }
 
-    @Override
-    public void onRequestPermissionResult(int permsRequestCode,
-                                          @NonNull String[] permissions,
-                                          @NonNull int[] grandResults) {
-        if (permsRequestCode == PERMISSIONS_REQUEST_CODE && grandResults.length ==
-                REQUIRED_PERMISSIONS.length) {
-            boolean check_result = true;
 
-            for (int result : grandResults) {
-                if (result != PackageManager.PERMISSION_GRANTED) {
-                    check_result = false;
-                    break;
-                }
-            }
+    final LocationListener gpsLocationListener = new LocationListener() {
+        public void onLocationChanged(Location location) {
+            // 위치 리스너는 위치정보를 전달할 때 호출되므로 onLocationChanged()메소드 안에 위지청보를 처리를 작업을 구현 해야합니다.
+            String provider = location.getProvider();  // 위치정보
+            double longitude = location.getLongitude(); // 위도
+            double latitude = location.getLatitude(); // 경도
+            txtResult.setText("위치정보 : " + provider + "\n" + "위도 : " + longitude + "\n" + "경도 : " + latitude);
+        } public void onStatusChanged(String provider, int status, Bundle extras) {
 
-            if (check_result) {
-                // 위치값
-            } else {
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this, REQUIRED_PERMISSIONS[0])
-                        || ActivityCompat.shouldShowRequestPermissionRationale(this, REQUIRED_PERMISSIONS[1])) {
-                    Toast.makeText(MainActivity.this, "퍼미션이 거부되었습니다. 앱을 다시 실행하여 퍼미션을 허용해주세요.", Toast.LENGTH_LONG).show();
-                    finish();
-                } else {
-                    Toast.makeText(MainActivity.this, "퍼미션이 거부되었습니다. 설정(앱 정보)에서 퍼미션을 허용해야 합니다.", Toast.LENGTH_LONG).show();
-                }
-            }
-        }
+        } public void onProviderEnabled(String provider) {
 
-    }
-
-    void checkRunTimePermission() {
-
-        //런타임 퍼미션 처리
-        // 1. 위치 퍼미션을 가지고 있는지 체크합니다.
-        int hasFineLocationPermission = ContextCompat.checkSelfPermission(MainActivity.this,
-                Manifest.permission.ACCESS_FINE_LOCATION);
-        int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(MainActivity.this,
-                Manifest.permission.ACCESS_COARSE_LOCATION);
-
-
-        if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED &&
-                hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
-
-            // 2. 이미 퍼미션을 가지고 있다면
-            // ( 안드로이드 6.0 이하 버전은 런타임 퍼미션이 필요없기 때문에 이미 허용된 걸로 인식합니다.)
-
-
-            // 3.  위치 값을 가져올 수 있음
-
-
-        } else {  //2. 퍼미션 요청을 허용한 적이 없다면 퍼미션 요청이 필요합니다. 2가지 경우(3-1, 4-1)가 있습니다.
-
-            // 3-1. 사용자가 퍼미션 거부를 한 적이 있는 경우에는
-            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, REQUIRED_PERMISSIONS[0])) {
-
-                // 3-2. 요청을 진행하기 전에 사용자가에게 퍼미션이 필요한 이유를 설명해줄 필요가 있습니다.
-                Toast.makeText(MainActivity.this, "이 앱을 실행하려면 위치 접근 권한이 필요합니다.", Toast.LENGTH_LONG).show();
-                // 3-3. 사용자게에 퍼미션 요청을 합니다. 요청 결과는 onRequestPermissionResult에서 수신됩니다.
-                ActivityCompat.requestPermissions(MainActivity.this, REQUIRED_PERMISSIONS,
-                        PERMISSIONS_REQUEST_CODE);
-
-
-            } else {
-                // 4-1. 사용자가 퍼미션 거부를 한 적이 없는 경우에는 퍼미션 요청을 바로 합니다.
-                // 요청 결과는 onRequestPermissionResult에서 수신됩니다.
-                ActivityCompat.requestPermissions(MainActivity.this, REQUIRED_PERMISSIONS,
-                        PERMISSIONS_REQUEST_CODE);
-            }
+        } public void onProviderDisabled(String provider) {
 
         }
+    };
 
-    }
+
+
+
+
 }
