@@ -33,4 +33,17 @@
 WBSP
 </string>
 
+    <!-- strings.xml -->
+    <string name="some_id">
+
+\u00EC\u0098\u00AC\u00ED\u0095\u00B4\u00EC\u009D\u0098 \u00EC\u00BB\u00AC\u00EB\u009F\u00AC, \u00EB\u00B9\u0084\u00EB\u00B0\u0094 \u00EB\u00A7\u0088\u00EC\u00A0\u00A0\u00ED\u0083\u0080
+</string>
+
+    <!-- strings.xml -->
+    <string name="lorem_ipsum">
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa\nrepellendus quisquam quasi neque at quae unde expedita\nnostrum aut minus animi tempora voluptates minima sed,\nofficia, sequi officiis excepturi repudiandae
+</string>
+
+
 </resources>

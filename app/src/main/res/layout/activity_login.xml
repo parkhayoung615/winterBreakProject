@@ -12,21 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F5F5F5"
-        android:clipToOutline="true" />
+        android:clipToOutline="true" >
 
         <TextView
             android:id="@+id/When_wear"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="139dp"
-            android:layout_marginTop="205dp"
+            android:layout_marginLeft="112dp"
+            android:layout_marginTop="571dp"
             android:gravity="top"
             android:text="뭐 입을지 고민될 때,"
             android:textAppearance="When_wear"
             android:textSize="16sp" />
-
 
         <TextView
             android:id="@+id/WBSP"
@@ -34,17 +33,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="151dp"
-            android:layout_marginTop="228dp"
+            android:layout_marginLeft="178dp"
+            android:layout_marginTop="592dp"
             android:gravity="top"
             android:lineHeight="58sp"
             android:text="WBSP"
             android:textAppearance="WBSP"
             android:textSize="40sp"
             android:textStyle="bold"
-            app:lineHeight="100sp" />
+            />
+    </RelativeLayout>
 
-        <!-- 빠른 로그인 -->
+
+    <!-- 빠른 로그인 -->
         <TextView
             android:id="@+id/Ql"
             android:layout_width="wrap_content"

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TIP -->
+    <RelativeLayout
+        android:id="@+id/tip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="tip"
+        android:clipToOutline="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 2023.02.15 -->
+
+        <!-- 올해의 컬러, 비바 마젠타 -->
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="309dp"
+            android:layout_height="196dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="-15dp"
+            app:srcCompat="@drawable/style_63a9c537c6926_930x930_1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="234dp"
+            android:gravity="top"
+            android:text="2023.02.15"
+            android:textAppearance="date"
+            android:textColor="#616161"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/vi_ma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="183dp"
+            android:gravity="top"
+            android:text="올해의 컬러, 비바 마젠타"
+            android:textAppearance="vi_ma"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lorem_ipsum"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="261dp"
+            android:gravity="top"
+            android:text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culparepellendus quisquam quasi neque at quae unde expedita nostrum aut minus animi tempora voluptates minima sed,
+officia, sequi officiis excepturi repudiandae"
+            android:textAppearance="lorem_ipsum"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="163dp"
+            android:layout_height="230dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="73dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/___1" />
+
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
