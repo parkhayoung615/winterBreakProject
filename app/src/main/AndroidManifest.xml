@@ -16,8 +16,11 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="@string/app_name" android:host="main"
+                    tools:ignore="AppLinkUrlError" />
             </intent-filter>
         </activity>
     </application>
