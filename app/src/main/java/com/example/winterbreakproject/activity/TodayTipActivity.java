@@ -48,45 +48,6 @@ public class TodayTipActivity extends AppCompatActivity {
         // 리사이클러뷰의 레이아웃 매니저 설정
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
-
-        /*
-        // 사용자가 오늘의 팁을 본 날짜와 시각이 기록되는 ArrayList
-        ArrayList<Date> dateRecord = new ArrayList<Date>();
-
-        // 오늘의 팁을 본 적이 없다면
-        if (dateRecord.isEmpty()) {
-            Log.v("기록 전 날짜", dateRecord.toString());
-            // 현재 날짜와 시각 가져오기
-            long now = System.currentTimeMillis();
-            Date date = new Date(now);
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
-            simpleDateFormat.format(date);
-            // 날짜를 기록하기
-            dateRecord.add(date);
-            Log.v("기록 후 날짜", dateRecord.toString());
-            // 오늘의 팁 화면으로 전환
-            clickLoad();
-            Log.v("test", "오늘의 팁을 본 적이 없다면");
-        } else {
-            // 마지막으로 오늘의 팁을 본 날짜와 시각 가져오기
-            Date beforeRecord = dateRecord.get(0);
-            // 현재 날짜와 시각 가져오기
-            long now = System.currentTimeMillis();
-            Date date = new Date(now);
-            // 두 날짜를 비교하고 마지막으로 본 날짜가 현재 날짜보다 이전이면 true 반환
-            boolean result = beforeRecord.before(date);
-            Log.v("test", "오늘의 팁을 본 적이 있다면");
-            if (result) {
-                // 원래 있던 날짜 삭제
-                dateRecord.remove(0);
-                // 후에 오늘 날짜를 기록하기
-                dateRecord.add(date);
-                // 오늘의 팁 화면으로 전환
-                clickLoad();
-                Log.v("test", "오늘의 팁을 본 적이 있고 날짜가 지났다면");
-            }
-        }
-        */
     }
     public void clickLoad() {
         // Volley+ 라이브러리를 사용해 서버의 TodayTip.php에 접속하여 DB 데이터 받기
