@@ -1,6 +1,7 @@
 package com.example.winterbreakproject.activity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +43,10 @@ public class TodayTipActivity extends AppCompatActivity {
         // 화면 넘어가기
         clickLoad();
     }
+
+    Button back_btn;
+
+    
     public void clickLoad() {
         // Volley+ 라이브러리를 사용해 서버의 TodayTip.php에 접속하여 DB 데이터 받기
         String serverUrl = "http://monayoung0323.dothome.co.kr/TodayTip.php";
