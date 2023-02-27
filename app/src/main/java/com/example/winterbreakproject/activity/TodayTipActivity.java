@@ -23,18 +23,16 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 public class TodayTipActivity extends AppCompatActivity {
-
     RecyclerView recyclerView;
     TodayTipDAO dao;
     ArrayList<TodayTipVO> voArrayList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_today_tip);
 
-        recyclerView=findViewById(R.id.recycler);
-        dao= new TodayTipDAO(this, voArrayList);
+        recyclerView = findViewById(R.id.recycler);
+        dao = new TodayTipDAO(this, voArrayList);
         recyclerView.setAdapter(dao);
 
         // 리사이클러뷰의 레이아웃 매니저 설정
@@ -44,7 +42,6 @@ public class TodayTipActivity extends AppCompatActivity {
         // 화면 넘어가기
         clickLoad();
     }
-
     public void clickLoad() {
         // Volley+ 라이브러리를 사용해 서버의 TodayTip.php에 접속하여 DB 데이터 받기
         String serverUrl = "http://monayoung0323.dothome.co.kr/TodayTip.php";
@@ -54,7 +51,7 @@ public class TodayTipActivity extends AppCompatActivity {
             //volley 라이브러리의 GET 방식은 버튼 누를 때마다 새로운 갱신 데이터를 불러들이지 않기 때문에 POST 방식을 사용
             @Override
             public void onResponse(JSONArray response) {
-                Toast.makeText(TodayTipActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(TodayTipActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
 
                 // 파라미터로 응답받은 결과인 JsonArray를 분석
                 voArrayList.clear();
@@ -78,7 +75,7 @@ public class TodayTipActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(TodayTipActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(TodayTipActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
             }
         });
 
