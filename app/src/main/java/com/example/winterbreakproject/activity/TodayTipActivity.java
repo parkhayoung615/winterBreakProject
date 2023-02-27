@@ -1,6 +1,10 @@
 package com.example.winterbreakproject.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -24,9 +28,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 public class TodayTipActivity extends AppCompatActivity {
+
+    // recycler 레이아웃 객체 생성
+    LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    View view = inflater.inflate(R.layout.activity_recycler, null);
     RecyclerView recyclerView;
     TodayTipDAO dao;
     ArrayList<TodayTipVO> voArrayList = new ArrayList<>();
+
+    private Button back_btn = (Button)view.findViewById(R.id.back_btn);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +52,14 @@ public class TodayTipActivity extends AppCompatActivity {
 
         // 화면 넘어가기
         clickLoad();
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
-
-    Button back_btn;
-
-    
     public void clickLoad() {
         // Volley+ 라이브러리를 사용해 서버의 TodayTip.php에 접속하여 DB 데이터 받기
         String serverUrl = "http://monayoung0323.dothome.co.kr/TodayTip.php";
@@ -88,5 +101,9 @@ public class TodayTipActivity extends AppCompatActivity {
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         //요청 큐에 요청 객체 생성
         requestQueue.add(jsonArrayRequest);
+    }
+
+    public void recordDate() {
+
     }
 }
