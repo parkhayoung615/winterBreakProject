@@ -23,12 +23,12 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="309dp"
-            android:layout_height="196dp"
+            android:layout_width="match_parent"
+            android:layout_height="253dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="-15dp"
+            android:layout_marginStart="-9dp"
+            android:layout_marginTop="-21dp"
             app:srcCompat="@drawable/style_63a9c537c6926_930x930_1" />
 
         <TextView
@@ -36,14 +36,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="19dp"
-            android:layout_marginTop="234dp"
-            android:gravity="top"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="296dp"
+            android:layout_gravity="top"
             android:text="2023.02.15"
             android:textAppearance="date"
             android:textColor="#616161"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:gravity="center_vertical|left"/>
 
         <TextView
             android:id="@+id/vi_ma"
@@ -51,39 +52,61 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="183dp"
-            android:gravity="top"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="244dp"
+            android:layout_gravity="top"
             android:text="올해의 컬러, 비바 마젠타"
             android:textAppearance="vi_ma"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical|left"
+            />
 
         <TextView
             android:id="@+id/lorem_ipsum"
-            android:layout_width="330dp"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="261dp"
-            android:gravity="top"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="335dp"
+            android:layout_gravity="top"
             android:text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culparepellendus quisquam quasi neque at quae unde expedita nostrum aut minus animi tempora voluptates minima sed,
 officia, sequi officiis excepturi repudiandae"
             android:textAppearance="lorem_ipsum"
-            android:textSize="17sp" />
+            android:textSize="12sp"
+            android:gravity="center_vertical|left" />
+
+
+        <TextView
+            android:id="@+id/lorem_ipsum_2"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="top"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="405dp"
+            android:gravity="center_vertical|left"
+            android:text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culparepellendus quisquam quasi neque at quae unde expedita nostrum aut minus animi tempora voluptates minima sed,
+officia, sequi officiis excepturi repudiandae"
+            android:textAppearance="lorem_ipsum_2"
+            android:textSize="12sp" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="163dp"
-            android:layout_height="230dp"
+            android:layout_width="185dp"
+            android:layout_height="241dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="73dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginBottom="37dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/___1" />
+            android:layout_centerHorizontal="true"
+
+
+        app:srcCompat="@drawable/___1" />
 
 
     </RelativeLayout>

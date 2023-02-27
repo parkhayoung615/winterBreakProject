@@ -7,12 +7,13 @@
     android:orientation="vertical">
 
 
+    <!-- 빠른 로그인 -->
     <RelativeLayout
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F5F5F5"
-        android:clipToOutline="true" >
+        android:clipToOutline="true">
 
         <TextView
             android:id="@+id/When_wear"
@@ -33,20 +34,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="178dp"
-            android:layout_marginTop="592dp"
+            android:layout_marginLeft="148dp"
+            android:layout_marginTop="573dp"
             android:gravity="top"
             android:lineHeight="58sp"
             android:text="WBSP"
             android:textAppearance="WBSP"
             android:textSize="40sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
     </RelativeLayout>
 
-
-    <!-- 빠른 로그인 -->
-        <TextView
+    <TextView
             android:id="@+id/Ql"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -24,7 +24,7 @@
             android:layout_marginTop="-44dp"
             android:tintMode="src_atop"
             app:srcCompat="@drawable/https___hypebeast_com_wp_content_blogs_1__1_"
-            app:tint="#80000000" />
+            app:tint="#90000000" />
 
         <TextView
             android:id="@+id/imageView"
@@ -60,8 +60,6 @@
             android:typeface="sans" />
 
     </RelativeLayout>
-
-
 
 
 </LinearLayout>
