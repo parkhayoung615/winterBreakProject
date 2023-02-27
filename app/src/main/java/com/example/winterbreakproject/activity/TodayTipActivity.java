@@ -103,7 +103,16 @@ public class TodayTipActivity extends AppCompatActivity {
         requestQueue.add(jsonArrayRequest);
     }
 
-    public void recordDate() {
+    public void recordDate(JSONArray response) {
+        try {
+            for(int i = 0; i < response.length(); i++){
+                JSONObject jsonObject = response.getJSONObject(i);
 
+                int id = Integer.parseInt(jsonObject.getString("id"));
+                dao.notifyItemInserted(0);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
