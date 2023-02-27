@@ -20,6 +20,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.winterbreakproject.R;
 import com.example.winterbreakproject.dao.TodayTipDAO;
+import com.example.winterbreakproject.request.TodayTipRequest;
 import com.example.winterbreakproject.vo.TodayTipVO;
 
 import org.json.JSONArray;
@@ -109,7 +110,9 @@ public class TodayTipActivity extends AppCompatActivity {
                 JSONObject jsonObject = response.getJSONObject(i);
 
                 int id = Integer.parseInt(jsonObject.getString("id"));
-                dao.notifyItemInserted(0);
+                TodayTipRequest todayTipRequest = new TodayTipRequest(id, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(TodayTipActivity.this);
+                queue.add(todayTipRequest);
             }
         } catch (JSONException e) {
             e.printStackTrace();
