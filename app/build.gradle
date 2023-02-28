@@ -9,7 +9,6 @@ android {
 
     defaultConfig {
         applicationId "com.example.winterbreakproject"
-
         minSdk 19
         targetSdk 33
 
