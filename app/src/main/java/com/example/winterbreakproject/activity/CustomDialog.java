@@ -14,8 +14,8 @@ public class CustomDialog extends Dialog {
     private TextView txt_contents;
     private Button shutdownClick;
 
-    public CustomDialog(@NonNull Context context, String contents) {
-        super(context);
+    public CustomDialog(@NonNull View.OnClickListener context, String contents) {
+        super((Context) context);
         setContentView(R.layout.activity_custom_dialog);
 
         txt_contents = findViewById(R.id.txt_contents);

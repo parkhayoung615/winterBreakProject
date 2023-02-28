@@ -64,7 +64,7 @@ public class modelingActivity extends AppCompatActivity {
             imageView1.setImageBitmap(bitmap1);
         }
 
-        Button btn = (Button) findViewById(R.id.button);
+        Button btn = (Button) findViewById(R.id.button2);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -15,13 +16,20 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.example.winterbreakproject.R;
-import com.example.winterbreakproject.activity.CustomDialog;
+import com.example.winterbreakproject.request.DefaultLoginRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private CustomDialog customDialog;
-    private Button button1;
+    private Button button1, button2;
     private TextView txtResult;
 
 
@@ -79,18 +87,25 @@ public class MainActivity extends AppCompatActivity {
         layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
         layoutParams.dimAmount = 0.8f;
         getWindow().setAttributes(layoutParams);
+
+        button2 = (Button)findViewById(R.id.button2);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()){
+                    case R.id.button2:
+                        customDialog = new CustomDialog(this,"다이어로그에 들어갈 내용입니다.");
+                        customDialog.show();
+                        break;
+
+                }
+            }
+        });
     }
 
 
-    public void btnOnclick(View view) {
-        switch (view.getId()){
-            case R.id.button:
-                customDialog = new CustomDialog(this,"다이어로그에 들어갈 내용입니다.");
-                customDialog.show();
-                break;
 
-        }
-    }
 
     final LocationListener gpsLocationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
