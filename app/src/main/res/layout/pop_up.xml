@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="314dp"
+        android:layout_height="102dp"
+        android:text="WBSP는 Weather Break Sns Project의 약자로, 오늘 무슨 옷을
+입어야 할지 고민하시는 분들을 위해 만들어진 앱이에요 !
+
+‘기온별 옷차림’ 키워드를 검색하기 귀찮아서 앱으로 만들었어요.
+WBSP가 여러분의 옷차림을 골라드릴게요!
+자신의 입맛대로 활용해주시길 바라요!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="시작하기" />
+    </LinearLayout>
+
+    <!-- Rectangle 32 -->
+    <View
+        android:id="@+id/start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:background="start"
+        />
+
+</LinearLayout>
