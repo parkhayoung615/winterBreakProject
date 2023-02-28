@@ -1,10 +1,13 @@
-package com.example.winterbreakproject;
+package com.example.winterbreakproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+
+import com.example.winterbreakproject.R;
+import com.example.winterbreakproject.activity.CustomDialog;
 
 public class MainActivity extends AppCompatActivity {
     private CustomDialog customDialog;

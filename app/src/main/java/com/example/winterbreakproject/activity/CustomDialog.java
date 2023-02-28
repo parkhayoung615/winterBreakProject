@@ -1,4 +1,4 @@
-package com.example.winterbreakproject;
+package com.example.winterbreakproject.activity;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+
+import com.example.winterbreakproject.R;
 
 public class CustomDialog extends Dialog {
     private TextView txt_contents;
