@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- First -->
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="first"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="-44dp"
+            android:tintMode="src_atop"
+            app:srcCompat="@drawable/https___hypebeast_com_wp_content_blogs_1__1_"
+            app:tint="#90000000" />
+
+        <TextView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="148dp"
+            android:layout_marginTop="598dp"
+
+            android:gravity="top"
+            android:text="WBSP"
+            android:textColor="#ffff"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="141dp"
+            android:layout_marginTop="584dp"
+
+            android:gravity="top"
+
+            android:text="뭐 입을지 고민될 때,"
+            android:textColor="#ffff"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:typeface="sans" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

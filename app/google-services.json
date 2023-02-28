@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "102181225961-5i2m7dqkfrode2leg1hq2e14or0g6o2e.apps.googleusercontent.com",
+          "client_id": "102181225961-hvhfg41317ic55lr2thkl635dir5neo1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.winterbreakproject",
+            "certificate_hash": "25d2f3121cfb549031af6067187ca1a70d6c390d"
+          }
+        },
+        {
+          "client_id": "102181225961-n0kld7014l0vgcmnkg7lfggfe5kdahes.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.winterbreakproject",
@@ -22,7 +30,7 @@
           }
         },
         {
-          "client_id": "102181225961-korebeihl0knqam3hf7qi7qnsk2me04v.apps.googleusercontent.com",
+          "client_id": "102181225961-2ofk32ra6pqq7no994bpf2ff3mil9gbs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,7 +43,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "102181225961-korebeihl0knqam3hf7qi7qnsk2me04v.apps.googleusercontent.com",
+              "client_id": "102181225961-2ofk32ra6pqq7no994bpf2ff3mil9gbs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

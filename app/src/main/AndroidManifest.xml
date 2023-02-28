@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.winterbreakproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
@@ -14,13 +16,33 @@
         android:theme="@style/Theme.WinterBreakProject"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".activity.DefaultLoginActivity"
+            android:exported="true">
+            <!-- 아래 코드가 삽입되는 부분이 먼저 실행되는 부분을 의미 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <intent-filter>
+                <data android:scheme="@string/app_name" android:host="main"
+                    tools:ignore="AppLinkUrlError" />
+            </intent-filter>
         </activity>
+        <!--
+        <activity
+            android:name=".activity.DefaultLoginActivity"
+            android:exported="true" />
+        -->
+        <activity
+            android:name=".activity.DefaultRegisterActivity"
+            android:exported="true" />
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>
