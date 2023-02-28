@@ -29,7 +29,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private CustomDialog customDialog;
-    private Button button1, button2;
+    private Button button1, button2, button3, button4;
     private TextView txtResult;
 
 
@@ -100,6 +100,26 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                 }
+            }
+        });
+
+        button3 = (Button)findViewById(R.id.button3);
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, modelingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button4 = (Button)findViewById(R.id.button4);
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, hayeonActivity.class);
+                startActivity(intent);
             }
         });
     }
