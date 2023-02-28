@@ -31,7 +31,9 @@
                 <data android:scheme="@string/app_name" android:host="main"
                     tools:ignore="AppLinkUrlError" />
             </intent-filter>
+
         </activity>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <!--
         <activity
             android:name=".activity.DefaultLoginActivity"

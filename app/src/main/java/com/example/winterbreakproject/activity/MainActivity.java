@@ -53,28 +53,28 @@ public class MainActivity extends AppCompatActivity {
                         double latitude = location.getLatitude();
 
 
-                    txtResult.setText("위치정보 : " + provider + "\n" +
-                            "위도 : " + longitude + "\n" +
-                            "경도 : " + latitude);
+                        txtResult.setText("위치정보 : " + provider + "\n" +
+                                "위도 : " + longitude + "\n" +
+                                "경도 : " + latitude);
+                    }
+
+                    // 위치정보를 원하는 시간, 거리마다 갱신해준다.
+                    lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+                            1000,
+                            1,
+                            gpsLocationListener);
+                    lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
+                            1000,
+                            1,
+                            gpsLocationListener);
                 }
-
-                // 위치정보를 원하는 시간, 거리마다 갱신해준다.
-                lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                        1000,
-                        1,
-                        gpsLocationListener);
-                lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
-                        1000,
-                        1,
-                        gpsLocationListener);
             }
-        }
-    });
+        });
 
 
 
 
-    //다이얼로그 밖의 화면은 흐리게 만들어줌
+        //다이얼로그 밖의 화면은 흐리게 만들어줌
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
         layoutParams.dimAmount = 0.8f;
