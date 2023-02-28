@@ -1,15 +1,18 @@
 plugins {
     id 'com.android.application'
-    // id 'com.google.gms.google-services' //구글서비스 추가
 }
+
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 33
 
     defaultConfig {
         applicationId "com.example.winterbreakproject"
-        minSdk 21
+
+        minSdk 19
         targetSdk 33
+
         versionCode 1
         versionName "1.0"
 
@@ -22,23 +25,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+    buildToolsVersion '33.0.2'
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
-    // 구글맵 코드
-//    implementation 'com.google.android.material:material:1.9.0-alpha01'
-//    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-//    implementation 'com.google.android.gms:play-services-maps:18.1.0'
-//    implementation 'com.google.android.gms:play-services-location:21.0.1'
-//    testImplementation 'junit:junit:4.13.2'
-//    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    implementation platform('com.google.firebase:firebase-bom:29.2.0')
+
+    implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.android.volley:volley:1.2.1'
 }
