@@ -36,7 +36,6 @@ WBSP가 여러분의 옷차림을 골라드릴게요!
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:background="start"
         />
 
 </LinearLayout>

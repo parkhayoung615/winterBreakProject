@@ -10,7 +10,6 @@
         android:id="@+id/tip"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="tip"
         android:clipToOutline="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +40,6 @@
             android:layout_marginTop="296dp"
             android:layout_gravity="top"
             android:text="2023.02.15"
-            android:textAppearance="date"
             android:textColor="#616161"
             android:textSize="14sp"
             android:gravity="center_vertical|left"/>
@@ -56,7 +54,6 @@
             android:layout_marginTop="244dp"
             android:layout_gravity="top"
             android:text="올해의 컬러, 비바 마젠타"
-            android:textAppearance="vi_ma"
             android:textSize="32sp"
             android:textStyle="bold"
             android:gravity="center_vertical|left"
@@ -73,7 +70,6 @@
             android:layout_gravity="top"
             android:text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culparepellendus quisquam quasi neque at quae unde expedita nostrum aut minus animi tempora voluptates minima sed,
 officia, sequi officiis excepturi repudiandae"
-            android:textAppearance="lorem_ipsum"
             android:textSize="12sp"
             android:gravity="center_vertical|left" />
 
@@ -90,7 +86,6 @@ officia, sequi officiis excepturi repudiandae"
             android:gravity="center_vertical|left"
             android:text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culparepellendus quisquam quasi neque at quae unde expedita nostrum aut minus animi tempora voluptates minima sed,
 officia, sequi officiis excepturi repudiandae"
-            android:textAppearance="lorem_ipsum_2"
             android:textSize="12sp" />
 
         <ImageView

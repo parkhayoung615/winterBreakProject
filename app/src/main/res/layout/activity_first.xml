@@ -11,11 +11,10 @@
         android:id="@+id/first"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="first"
         android:clipToOutline="true">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
@@ -27,7 +26,7 @@
             app:tint="#90000000" />
 
         <TextView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -43,7 +42,7 @@
             android:typeface="sans" />
 
         <TextView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

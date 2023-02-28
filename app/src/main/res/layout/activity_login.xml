@@ -26,7 +26,6 @@
             android:layout_marginTop="571dp"
             android:gravity="top"
             android:text="뭐 입을지 고민될 때,"
-            android:textAppearance="When_wear"
             android:textSize="16sp" />
 
         <TextView
@@ -40,7 +39,6 @@
             android:gravity="top"
             android:lineHeight="58sp"
             android:text="WBSP"
-            android:textAppearance="WBSP"
             android:textSize="40sp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -82,7 +80,6 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="55dp"
             android:layout_marginTop="511dp"
-            android:background="continue_wi"
             android:elevation="3dp">
 
             <ImageButton
