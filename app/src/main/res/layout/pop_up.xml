@@ -3,6 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <TextView
@@ -33,9 +34,8 @@ WBSP가 여러분의 옷차림을 골라드릴게요!
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true" />
 
 </LinearLayout>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <!-- TIP -->
     <RelativeLayout
@@ -35,14 +36,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_gravity="top"
             android:layout_marginStart="40dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="296dp"
-            android:layout_gravity="top"
+            android:gravity="center_vertical|left"
             android:text="2023.02.15"
             android:textColor="#616161"
-            android:textSize="14sp"
-            android:gravity="center_vertical|left"/>
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/vi_ma"
@@ -50,14 +51,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_gravity="top"
             android:layout_marginLeft="36dp"
             android:layout_marginTop="244dp"
-            android:layout_gravity="top"
+            android:gravity="center_vertical|left"
             android:text="올해의 컬러, 비바 마젠타"
             android:textSize="32sp"
-            android:textStyle="bold"
-            android:gravity="center_vertical|left"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/lorem_ipsum"
@@ -65,13 +65,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_gravity="top"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="335dp"
-            android:layout_gravity="top"
+            android:gravity="center_vertical|left"
             android:text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culparepellendus quisquam quasi neque at quae unde expedita nostrum aut minus animi tempora voluptates minima sed,
 officia, sequi officiis excepturi repudiandae"
-            android:textSize="12sp"
-            android:gravity="center_vertical|left" />
+            android:textSize="12sp" />
 
 
         <TextView
@@ -105,8 +105,6 @@ officia, sequi officiis excepturi repudiandae"
 
 
     </RelativeLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
