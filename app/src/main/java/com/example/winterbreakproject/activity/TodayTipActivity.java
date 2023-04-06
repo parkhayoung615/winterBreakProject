@@ -1,11 +1,14 @@
 package com.example.winterbreakproject.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,13 +51,15 @@ public class TodayTipActivity extends AppCompatActivity {
         // 리사이클러뷰의 레이아웃 매니저 설정
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
+
+        clickLoad();
     }
     public void clickLoad() {
         // Volley+ 라이브러리를 사용해 서버의 TodayTip.php에 접속하여 DB 데이터 받기
         String serverUrl = "http://monayoung0323.dothome.co.kr/TodayTip.php";
 
         // 결과를 JsonArray로 받을 것이므로 StringRequest가 아니라 JsonArrayRequest를 이용
-        JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(Request.Method.POST, serverUrl, null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, serverUrl, null, new Response.Listener<JSONArray>() {
             //volley 라이브러리의 GET 방식은 버튼 누를 때마다 새로운 갱신 데이터를 불러들이지 않기 때문에 POST 방식을 사용
             @Override
             public void onResponse(JSONArray response) {
@@ -65,7 +70,7 @@ public class TodayTipActivity extends AppCompatActivity {
                 dao.notifyDataSetChanged();
 
                 try {
-                    for(int i = 0; i < response.length(); i++){
+                    for (int i = 0; i < response.length(); i++) {
                         JSONObject jsonObject = response.getJSONObject(i);
 
                         int id = Integer.parseInt(jsonObject.getString("id")); // id가 int형이기에 문자열로 바꿔야 함

@@ -93,13 +93,8 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.button2:
-                        customDialog = new CustomDialog(this,"다이어로그에 들어갈 내용입니다.");
-                        customDialog.show();
-                        break;
-
-                }
+                Intent intent = new Intent(MainActivity.this, TodayTipActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -122,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
 

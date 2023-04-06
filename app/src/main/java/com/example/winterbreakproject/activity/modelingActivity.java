@@ -45,7 +45,7 @@ public class modelingActivity extends AppCompatActivity {
                 modelingImg.setImageResource(R.drawable.second);
             }
         };
-        secondBtn = (ImageButton) findViewById(R.id.closet_1);
+        secondBtn = (ImageButton) findViewById(R.id.closet_2);
         secondBtn.setOnClickListener(listener2);
         
     }
